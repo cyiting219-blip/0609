@@ -476,7 +476,38 @@ function drawHelp() {
 //////////////////////////////////////////////////
 
 function drawBackButton() {
-  // 取消繪製預設按鈕，改為直接使用圖片中的按鈕圖案
+
+  push();
+
+  rectMode(CORNER);
+
+  // 背景
+  fill(0, 180);
+  stroke(255);
+  strokeWeight(3);
+
+  rect(
+    width * 0.02,
+    height * 0.85,
+    width * 0.26,
+    height * 0.10,
+    20
+  );
+
+  // 文字
+  fill(255);
+  noStroke();
+
+  textAlign(CENTER, CENTER);
+  textSize(32);
+
+  text(
+    "← 返回主選單",
+    width * 0.15,
+    height * 0.90
+  );
+
+  pop();
 }
 
 //////////////////////////////////////////////////
@@ -543,7 +574,7 @@ function mousePressed() {
 
     // 說明
     if (dist(mouseX, mouseY,
-             width * 0.67,
+             width * 0.60,
              height * 0.84) < 70) {
       scene = "help";
       return;
